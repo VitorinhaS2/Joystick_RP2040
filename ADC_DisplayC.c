@@ -79,3 +79,31 @@ void setup_gpio() {
 }
 
 
+// Laise — Configuração do PWM e Interrupção do Botão
+
+
+void setup_pwm() {
+    gpio_set_function(LED_BLUE, GPIO_FUNC_PWM);
+    uint slice_blue = pwm_gpio_to_slice_num(LED_BLUE);
+    pwm_set_clkdiv(slice_blue, PWM_DIV);
+    pwm_set_wrap(slice_blue, PWM_WRAP);
+
+    gpio_set_function(LED_RED, GPIO_FUNC_PWM);
+    uint slice_red = pwm_gpio_to_slice_num(LED_RED);
+    pwm_set_clkdiv(slice_red, PWM_DIV);
+    pwm_set_wrap(slice_red, PWM_WRAP);
+
+    pwm_set_enabled(slice_blue, true);
+    pwm_set_enabled(slice_red, true);
+}
+
+void handle_button_press(uint gpio, uint32_t events) {
+    uint32_t current_time = to_ms_since_boot(get_absolute_time());
+    if (current_time - last_interrupt_time > DEBOUNCE_TIME) {
+        last_interrupt_time = current_time;
+        if (gpio == BTN_J) {
+            led_green_state = !led_green_state;
+            gpio_put(LED_GREEN, led_green_state);
+        }
+    }
+}
