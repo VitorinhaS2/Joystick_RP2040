@@ -59,5 +59,23 @@ int main() {
         pwm_set_gpio_level(LED_BLUE, fabs(pwm_y));
     }
 }
+// Láisa Bianca — Configuração dos GPIOs
+
+
+void setup_gpio() {
+    gpio_init(BTN_J);
+    gpio_init(LED_BLUE);
+    gpio_init(LED_RED);
+    gpio_init(LED_GREEN);
+    adc_gpio_init(VRX_PIN);
+    adc_gpio_init(VRY_PIN);
+
+    gpio_set_dir(BTN_J, GPIO_IN);
+    gpio_pull_up(BTN_J);
+
+    gpio_set_dir(LED_BLUE, GPIO_OUT);
+    gpio_set_dir(LED_RED, GPIO_OUT);
+    gpio_set_dir(LED_GREEN, GPIO_OUT);
+}
 
 
