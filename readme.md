@@ -33,7 +33,7 @@ Neste projeto foram utilizados os seguintes componentes:
 ---
 
 ## **VÍDEO EXPLICATIVO**
-
+[Link do vídeo explicativo](https://www.canva.com/design/DAGrerIm0Ys/L7ECF4Yy8_C0MvmZo-GTtQ/watch?utm_content=DAGrerIm0Ys&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h62398b5113)
 
 ## Licença
 Este projeto é destinado exclusivamente para fins acadêmicos na disciplina **ELET0021 — Microcontroladores e Microprocessadores**.

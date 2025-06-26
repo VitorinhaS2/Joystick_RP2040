@@ -4,8 +4,6 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 
-//  Vitória — Dona do Repositório / Estrutura Principal
-
 // Definição de pinos e constantes usados no projeto todo
 #define VRX_PIN 27
 #define VRY_PIN 26
@@ -23,7 +21,7 @@ volatile bool pwm_enabled = true;
 volatile uint32_t last_interrupt_time = 0;
 float pwm_x, pwm_y;
 
-// Protótipos das funções implementadas pelos outros desenvolvedores
+// Protótipos das funções implementadas
 void setup_gpio();
 void setup_pwm();
 void handle_button_press(uint gpio, uint32_t events);
@@ -61,7 +59,6 @@ int main() {
 }
 // Láisa Bianca — Configuração dos GPIOs
 
-
 void setup_gpio() {
     gpio_init(BTN_J);
     gpio_init(LED_BLUE);
@@ -78,9 +75,7 @@ void setup_gpio() {
     gpio_set_dir(LED_GREEN, GPIO_OUT);
 }
 
-
 // Laise — Configuração do PWM e Interrupção do Botão
-
 
 void setup_pwm() {
     gpio_set_function(LED_BLUE, GPIO_FUNC_PWM);
