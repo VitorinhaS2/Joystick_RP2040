@@ -62,3 +62,4 @@ target_link_libraries(ADC_DisplayC
         
         )
 
+pico_add_extra_outputs(ADC_DisplayC)
